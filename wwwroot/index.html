@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Api Rest</title>
+    <!--compiled and minified css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    
+
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+                <p style="font-weight: 900;">Chose the worker you want:</p>
+                <a class="btn-floating btn-large cyan pulse" id="worker1"><i class="material-icons">A</i></a>
+                <a class="btn-floating btn-large cyan pulse" id="worker2"><i class="material-icons">B</i></a>
+                <a class="btn-floating btn-large cyan pulse" id="worker3"><i class="material-icons">C</i></a>
+        </div>
+        <div class="section">
+            <p>Name: </p> <p id="wName"></p>
+            <p>Last name: </p><p id="wLName"></p>
+            <p>Contact: </p><p id="Wemail"></p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <button class="collapsible">CLICK HERE TO ADD A NEW WORKER</button>
+        <div class="content">
+            <p>ID:</p><input type="number" id="newid"><br>
+            <p>Last Name:</p><input type="text" id="newlname"><br>
+            <p>First Name: </p><input type="text" id="newfname"><br>
+            <p>Display Name: </p><input type="text" id="newdname"><br>
+            <p>Work Email: </p><input type="email" id="newwemail"><br>
+            <p>Username: </p><input type="text" id="newusername"><br>
+            <br>
+            <a class="btn-floating btn-large red pulse" id="btnAdd" onclick="addWorker()">ADD</a> 
+            
+        </div>  
+        
+    </div>
+    <div class="container">
+      <br>
+      <br>
+      <br>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <!--cabecera-->
+                <th>ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Display Name</th>
+                <th>Email</th>
+                <th>Username</th>
+              </tr>
+            </thead>
+            <tbody id="res">
+
+            </tbody>
+            
+          </table>
+          <br>
+          <br>
+          <br>
+          <br>
+          <a class="btn-floating btn-large cyan pulse" id="show"><i class="material-icons">show</i></a>
+          
+        </div>
+      </div>
+      <div class="container">
+        To delete Insert worker ID:
+        <br>
+        <input type="text" id="target">
+        <br>
+        <a class="btn-floating btn-large red pulse" id="delete"><i class="material-icons">delete</i></a>
+      </div>
+    </div>
+
+    <!--codigo plegable-->
+    <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+            </script>
+<script src="index.js"></script>
+</body>
+</html>
